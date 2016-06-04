@@ -6,53 +6,53 @@
 		 metadata-complete="true">
 		 
 	<servlet>
-		<servlet-name>Index</servlet-name>	
+		<servlet-name>IndexServlet</servlet-name>	
 		<servlet-class>com.web.IndexServlet</servlet-class>
 	</servlet>
         
 	<servlet-mapping>
-		<servlet-name>Index</servlet-name>  
-		<url-pattern>/IndexServlet.do</url-pattern>	
+		<servlet-name>IndexServlet</servlet-name>  
+		<url-pattern>/Index.do</url-pattern>	
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>Certificate</servlet-name>
+		<servlet-name>CertificateServlet</servlet-name>
 		<servlet-class>com.web.CertificateServlet</servlet-class>
 	</servlet>
         
 	<servlet-mapping>
-		<servlet-name>Certificate</servlet-name> 
-		<url-pattern>/CertificateServlet.do</url-pattern>
+		<servlet-name>CertificateServlet</servlet-name> 
+		<url-pattern>/Certificate.do</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>Insert</servlet-name>	
+		<servlet-name>InsertServlet</servlet-name>	
 		<servlet-class>com.web.InsertEventServlet</servlet-class>
 	</servlet>
         
 	<servlet-mapping>
-		<servlet-name>Insert</servlet-name>  
-		<url-pattern>/InsertEventServlet.do</url-pattern>	
+		<servlet-name>InsertServlet</servlet-name>  
+		<url-pattern>/InsertEvent.do</url-pattern>	
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>EventInfo</servlet-name>	
+		<servlet-name>EventInfoServlet</servlet-name>	
 		<servlet-class>com.web.EventInfoServlet</servlet-class>
 	</servlet>
         
 	<servlet-mapping>
-		<servlet-name>EventInfo</servlet-name>  
-		<url-pattern>/EventInfoServlet.do</url-pattern>	
+		<servlet-name>EventInfoServlet</servlet-name>  
+		<url-pattern>/EventInfo.do</url-pattern>	
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>Apply</servlet-name>	
+		<servlet-name>ApplyServlet</servlet-name>	
 		<servlet-class>com.web.ApplyServlet</servlet-class>
 	</servlet>
         
 	<servlet-mapping>
-		<servlet-name>Apply</servlet-name>  
-		<url-pattern>/ApplyServlet.do</url-pattern>	
+		<servlet-name>ApplyServlet</servlet-name>  
+		<url-pattern>/Apply.do</url-pattern>	
 	</servlet-mapping>
 	
 	
