@@ -21,6 +21,12 @@
 	<input type="submit" name="next" value="Submit">
 	</form>
 	
+	<!-- create event -->
+	<a href="CertificateServlet.do">我要辦活動</a>
+	
+	<!-- top 10 -->
+	<a href="EventInfoServlet.do?action=top10 ">Top 10</a>
+	
 	<!-- make timeline -->
 	<!-- 1 -->
     <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
