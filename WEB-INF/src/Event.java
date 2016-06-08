@@ -1,6 +1,7 @@
 package com.model;
 
 public class Event {
+	ArrayList<Apply> aList;
 	int id
     String name;
     int year;
@@ -14,6 +15,7 @@ public class Event {
 	int CTR;
 
     public Event() {
+	aList = new ArrayList<Apply>();
 	id = 0;
 	name = "No name";
 	location = "#";
@@ -32,6 +34,14 @@ public class Event {
 
     public void setName(String aName) {
 	this.name = aName;
+    }
+	
+	public ArrayList<Apply> getApplyList() {
+	return applyList;
+    }
+
+    public void setApplyList(ArrayList<Apply> aList) {
+	this.applyList = aList;
     }
 
     public String getLocation() {
