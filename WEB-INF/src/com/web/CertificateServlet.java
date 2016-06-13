@@ -3,14 +3,14 @@ package com.web;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import com.model.AccountProcess;
+import java.io.IOException;
 
 public class CertificateServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		
 		RequestDispatcher view = null;
-		AccountProcess ap = getServletContext().getAttribute("account");
+		AccountProcess ap = (AccountProcess) getServletContext().getAttribute("account");
 		String pwd = (String)request.getParameter("pws");
 		
 		String checkResult = ap.pwdCheck(pwd);
