@@ -22,7 +22,36 @@
 	</form>
 	
 	<!-- create event -->
-	<a href="CertificateServlet.do">我要辦活動</a>
+	<p><a href="CertificateServlet.do" name="h1">我要辦活動</a></p>
+	<button onclick="popup()">Try it</button>
+	<p id="pwd"></p>
+
+	<script>
+	function popup() {
+		var pwd = prompt("請輸入社團驗證碼", "");
+    
+		if (pwd != null) {
+			document.all("h1").innerText =
+			"CertificateServlet.do?pwd=" + pwd ;
+		}
+	}
+</script>
+	
+	<!-- relationship -->
+	<p><a href="RelationServlet.do" name="h2">羈絆抓抓</a></p>
+	<button onclick="pop2()">Try it</button>
+	<p id="kwd"></p>
+
+	<script>
+	function pop2() {
+		var kwd = prompt("請輸入關鍵字", "");
+    
+		if (kwd != null) {
+			document.all("h2").innerText =
+			"RelationServletServlet.do?kwd=" + kwd ;
+		}
+	}
+</script>
 	
 	<!-- top 10 -->
 	<a href="EventInfoServlet.do?action=top10 ">Top 10</a>

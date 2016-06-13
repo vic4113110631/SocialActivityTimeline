@@ -8,14 +8,34 @@
     <head>
         <meta http-equiv = "Content-Type" content = "text/html; charset = UTF-8">
         <title>Post Form</title>
+		
+		<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+		<script>
+				tinymce.init(
+					{
+						selector: 'textarea',
+						height: 500,
+						plugins: [
+							'advlist autolink lists link image charmap print preview anchor',
+							'searchreplace visualblocks code fullscreen',
+							'insertdatetime media table contextmenu paste code'
+						],
+						toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+						content_css: [
+							'//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+							'//www.tinymce.com/css/codepen.min.css'
+						]
+					}
+				);
+		</script>
     </head>
     <body>
 		<form autocomplete = "on" method = "post" action = "InsertEvent.do">
-			<p><label>活動名稱<input type = "text" /></label></p>
-			<p><label>活動日期<input type = "datetime" /></label></p>
-			<p><label>活動地點<input type = "text" /></label></p>
-			<p><label>活動介紹<input type = "text" /></label></p>
-			<p><label>活動封面<input type = "url" /></label></p>
+			<p><label>活動名稱<input name = "title" type = "text" /></label></p>
+			<p><label>活動日期<input name = "date" type = "datetime" /></label></p>
+			<p><label>活動地點<input name = "location" type = "text" /></label></p>
+			<p><label>活動封面<input name = "cover" type = "url" /></label></p>
+			<p><label>活動內容<textarea name = "content"></textarea></label></p>
 			<p><input type = "submit" value = "送出" /></p>
 		</form>
     </body>
