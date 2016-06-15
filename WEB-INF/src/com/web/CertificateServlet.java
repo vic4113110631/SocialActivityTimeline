@@ -1,5 +1,7 @@
 package com.web;
 
+import com.model.AccountProcess;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 

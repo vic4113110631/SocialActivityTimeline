@@ -7,12 +7,14 @@ public class RelationJsonPack {
 	private String name;
 	private ArrayList<com.model.LittleJsonPack> children;
 	
-	public RelationJsonPack(String name, ArrayList<com.model.LittleJsonPack> one) {
+	public RelationJsonPack(String name, ArrayList<LittleJsonPack> one) {
 		
 		setName(name);
 		setChild(one);
 	}
-	
+
+
+
 	public String getName() {
 		return this.name;
 	}
@@ -25,7 +27,7 @@ public class RelationJsonPack {
 		this.name = name;
 	}
 	
-	public void setChild(String child) {
-		this.child = child;
+	public void setChild(ArrayList<LittleJsonPack> child) {
+		this.children = child;
 	}
 }

@@ -23,7 +23,7 @@ public class RelationServlet extends HttpServlet {
 			ArrayList<Event> myEvents = da.whatIParticipateIn(kwd);
 			if(myEvents != null){
 				Hashtable<String, ArrayList<Event>> table = da.relationDistanceTable(myEvents);
-				da.Relation2JsonFile(da.RelationJsonPacker(kwd, table), fn);
+				//da.Relation2JsonFile(da.RelationJsonPacker(kwd, table), fn);
 				request.setAttribute("RelationTable", table);
 				request.setAttribute("TableKeySet", table.keySet());
 				view = request.getRequestDispatcher("Relation.jsp");
