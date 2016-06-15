@@ -15,7 +15,7 @@ public class ChildJsonPack {
 		return this.name;
 	}
 	
-	public int getSize() {
+	public String getSize() {
 		return this.size;
 	}
 	

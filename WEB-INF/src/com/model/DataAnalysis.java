@@ -46,16 +46,17 @@ public class DataAnalysis{
 
 
 	public ArrayList<Event> whatIParticipateIn(String kwd) {
-		return null;
 	}
 
 	public Hashtable<String,ArrayList<Event>> relationDistanceTable(ArrayList<Event> myEvents) {
-        return null;
-    }
+
+	}
 
 	public void RelationJsonPacker(String kwd, Hashtable<String, ArrayList<Event>> table) {
 		return;
 	}
 
-
+	public void Relation2JsonFile(void aVoid, String fn) {
+		return;
+	}
 }

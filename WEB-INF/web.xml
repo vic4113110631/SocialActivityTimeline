@@ -46,13 +46,13 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>ApplicantServlet</servlet-name>
-		<servlet-class>com.web.ApplicantServlet</servlet-class>
+		<servlet-name>ApplyServlet</servlet-name>	
+		<servlet-class>com.web.ApplyServlet</servlet-class>
 	</servlet>
         
 	<servlet-mapping>
-		<servlet-name>ApplicantServlet</servlet-name>
-		<url-pattern>/Applicant.do</url-pattern>
+		<servlet-name>ApplyServlet</servlet-name>  
+		<url-pattern>/Apply.do</url-pattern>	
 	</servlet-mapping>
 	
 	
@@ -62,23 +62,15 @@
  
 
 	<context-param>
-		<param-name>EventFilePath</param-name>
+		<param-name>EFile</param-name>
 		<param-value>Event.json</param-value>
-    </context-param>
-
-    <context-param>
-		<param-name>ApplicantFilePath</param-name>
-		<param-value>Applicant.json</param-value>
-    </context-param>
-
-    <context-param>
-        <param-name>PasswordFile</param-name>
-		<param-value>Password.json</param-value>
-	</context-param>
-
-	<context-param>
-		<param-name>ImgPath</param-name>
-		<param-value>/WEB-INF/Event/</param-value>
+		
+		<param-name>AFile</param-name>
+		<param-value>Applier.json</param-value>
+		
+		<param-name>PFile</param-name>
+		<param-value>password.json</param-value>
+		
 	</context-param>
 
 	<listener>
@@ -86,5 +78,9 @@
 			com.web.EventContextListener
 		</listener-class>
 	</listener>
+
+	
+
+	
 
  </web-app>
