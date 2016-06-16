@@ -1,8 +1,9 @@
-<%@ page contentType = "text/html" pageEncoding = "UTF-8" %>
+<%@ page contentType = "text/html" pageEncoding = "UTF-8"  %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@ page import = "java.util.*" %>
+<%@ taglib prefix = "c" uri = "htt p://java.sun.com/jsp/jstl/core" %>
 
 <html>
     <head>
@@ -30,13 +31,21 @@
 		</script>
     </head>
     <body>
-		<form autocomplete = "on" method = "post" action = "InsertEvent.do">
-			<p><label>���ʦW��<input name = "title" type = "text" /></label></p>
-			<p><label>���ʤ��<input name = "date" type = "datetime" /></label></p>
-			<p><label>���ʦa�I<input name = "location" type = "text" /></label></p>
-			<p><label>���ʫʭ�<input name = "cover" type = "url" /></label></p>
-			<p><label>���ʤ��e<textarea name = "content"></textarea></label></p>
-			<p><input type = "submit" value = "�e�X" /></p>
+		<form autocomplete = "on" method = "post" action = "InsertEvent.do" enctype="multipart/form-data" name = "postForm">
+			<p><label>活動名稱<input name = "title" type = "text" ></label></p>
+			<p>
+				<label>種類
+					<select>
+
+					</select>
+				</label>
+			</p>
+			<p><label>活動日期<input name = "date" type = "date" ></label></p>
+			<p><label>活動時間<input name = "time" type = "time" step = "600"></label></p>
+			<p><label>活動地點<input name = "location" type = "text" /></label></p>
+			<p><label>活動封面<input name = "content" type = "file" /></label></p>
+			<p><label>活動內容<textarea name = "content"></textarea></label></p>
+			<p><input type = "submit" value = "送出" /></p>
 		</form>
     </body>
 </html>

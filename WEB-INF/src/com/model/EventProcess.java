@@ -7,11 +7,17 @@ import java.util.ArrayList;
  */
 public class EventProcess {
 
+
     public ArrayList<Event> eventSelect(ArrayList<Event> eList, String[] clubList) {
         return eList;
     }
 
     public String toJson(ArrayList<Event> eList) {
         return "test";
+    }
+
+    public Boolean writeEvent(Event event){
+
+        return false;
     }
 }

@@ -2,10 +2,15 @@ package com.model;
 
 import java.util.ArrayList;
 
+enum Type{
+    康樂性, 服務性, 學藝性, 聯誼性, 學術性, 體育性, 志工群, 其他
+};
+
 public class Event {
 	private ArrayList<Applicant> applicantList;
 	private int id;
     private String name;
+    private Type type;
     private int year;
     private int month;
     private int day;
@@ -20,13 +25,14 @@ public class Event {
         applicantList = new ArrayList<Applicant>();
 	    id = 0;
 	    name = "No name";
-	    location = "#";
+        type = Type.其他;
+        location = "#";
 	    introduction = "No introduction";
 	    ImgPath = "#";
 	    year = 0;
         month = 0;
         day = 0;
-	    hour=0;
+	    hour = 0;
 	    minute = 0;
     }
 
@@ -124,6 +130,14 @@ public class Event {
 
     public void setCTR(int CTR) {
         this.CTR = CTR;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 
     @Override

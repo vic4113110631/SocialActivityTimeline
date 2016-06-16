@@ -1,5 +1,6 @@
-package com.web;;
+package com.web;
 
+import com.model.Event;
 import org.apache.tomcat.util.http.fileupload.FileItemIterator;
 import org.apache.tomcat.util.http.fileupload.FileItemStream;
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
@@ -17,6 +18,7 @@ import java.io.*;
 public class InsertEventServlet extends HttpServlet {
     private String title;
     private String date;
+    private String time;
     private String location;
     private String content;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,6 +26,7 @@ public class InsertEventServlet extends HttpServlet {
         PrintWriter out = response.getWriter(); // 再拿到輸出对象
         response.setContentType("text/html;charset=UTF-8");
 
+        this.content = request.getParameter("content");
         boolean isMultiPart = ServletFileUpload.isMultipartContent(request);
 
         if(isMultiPart){
@@ -39,7 +42,23 @@ public class InsertEventServlet extends HttpServlet {
                         InputStream inputStream = item.openStream();
                         byte [] bytes = new byte[inputStream.available()];
                         inputStream.read(bytes);
-                        String value = new String(bytes, "UTF-8");
+                        String value = new String(bytes, "UTF-8");//設定UTF-8，重要
+                        switch (fieldName){
+                            case "title":
+                                this.title = value;
+                                break;
+                            case "date":
+                                this.date = value;
+                                break;
+                            case "time":
+                                this.time = value;
+                                break;
+                            case "loaction":
+                                this.location = value;
+                                break;
+                            case "content":
+                                this.content = value;
+                        }
                         /*----------------測試輸出----------------*/
                         out.println(fieldName + ":" + value + "</br>");
                         /*----------------測試輸出----------------*/
@@ -53,9 +72,9 @@ public class InsertEventServlet extends HttpServlet {
                         /*----------------測試輸出----------------*/
                         //call a method to upload file.
                         if(this.processFile(realPath, item)){
-                            out.println("file uploaded successfully");
+                            out.println("file uploaded successfully</br>");
                         }else {
-                            out.println("file uploading failed");
+                            out.println("file uploading failed</br>");
                         }
                     }
                 }
@@ -63,6 +82,9 @@ public class InsertEventServlet extends HttpServlet {
                 fue.printStackTrace();
             }
         }
+
+        Event event = new Event();
+
 
     }
 

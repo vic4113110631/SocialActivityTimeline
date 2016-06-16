@@ -27,8 +27,16 @@ public class EventContextListener implements ServletContextListener,
          You can initialize servlet context related data here.
       */
         ServletContext context = event.getServletContext();
-        String path = context.getInitParameter("ImgPath");
-        context.setAttribute("ImgPath", path);
+        /*-----------------------------Set ImgPath-----------------------------*/
+        String imgPath = context.getInitParameter("ImgPath");
+        context.setAttribute("ImgPath", imgPath);
+        /*-----------------------------End set ImgPath-----------------------------*/
+
+        /*-----------------------------Set EventFilePath-----------------------------*/
+        String eventFilePath = context.getInitParameter("EventFilePath");
+        context.setAttribute("EventFilePath", eventFilePath);
+        /*-----------------------------End set EventFilePath-----------------------------*/
+
 
     }
 
