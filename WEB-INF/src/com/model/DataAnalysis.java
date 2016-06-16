@@ -16,9 +16,9 @@ public class DataAnalysis{
 		}
 		return boy/girl;
 	}
-	
-	
-	
+
+
+
 	public ArrayList<Event> getHitRatio(ArrayList<Event> eList){
 		ArrayList<Integer> hitArray = new ArrayList<Integer>();
 		ArrayList<Event> top10 = new ArrayList<Event>();
@@ -50,8 +50,8 @@ public class DataAnalysis{
 	}
 
 	public Hashtable<String,ArrayList<Event>> relationDistanceTable(ArrayList<Event> myEvents) {
-        return null;
-    }
+		return null;
+	}
 
 	public void RelationJsonPacker(String kwd, Hashtable<String, ArrayList<Event>> table) {
 		return;
