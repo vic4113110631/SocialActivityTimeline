@@ -1,0 +1,34 @@
+[
+  {
+    "calendar": {
+      "month": 4,
+      "year": 2016,
+      "dayOfMonth": 12,
+      "hourOfDay": 6,
+      "minute": 30,
+      "second": 0
+    },
+    "preview": "http://localhost:8080/PostForm.jsp",
+    "ImgPath": "01-海大熱舞期末成果發表－我們.jpg",
+    "CTR": 0,
+    "applicantList": [
+        {
+        "number": "00257148",
+        "grade": "4",
+        "sex": "MALE",
+        "name": "Wiliam"
+        },
+        {
+        "number": "00257147",
+        "grade": "1",
+        "sex": "MALE",
+        "name": "Chen"
+        }
+    ],
+    "name": "海大熱舞期末成果發表－我們",
+    "location": "國立台灣海洋大學 海洋廳",
+    "id": 0,
+    "type": "康樂性",
+    "introduction": "<p><strong>http://localhost:8080/PostForm.jsp</strong></p>\r\n<p><strong>http://localhost:8080/PostForm.jsp</strong></p>"
+  }
+]

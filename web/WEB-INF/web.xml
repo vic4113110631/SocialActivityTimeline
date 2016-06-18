@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://java.sun.com/xml/ns/javaee"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee"
 		 version="3.0"
 		 metadata-complete="true">
 
@@ -63,7 +63,7 @@
 
 	<context-param>
 		<param-name>EventFilePath</param-name>
-		<param-value>Event.json</param-value>
+		<param-value>/WEB-INF/Event/Event.json</param-value>
 	</context-param>
 
 	<context-param>
@@ -82,9 +82,7 @@
 	</context-param>
 
 	<listener>
-		<listener-class>
-			com.web.EventContextListener
-		</listener-class>
+		<listener-class>com.web.EventContextListener</listener-class>
 	</listener>
 
 </web-app>

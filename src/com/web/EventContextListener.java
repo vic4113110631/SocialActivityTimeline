@@ -1,6 +1,8 @@
 package com.web; /**
- * Created by VictoryChen on 2016/6/13.
+ * Created by WeiRenChen on 2016/6/13.
  */
+
+import com.model.EventProcess;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -36,6 +38,11 @@ public class EventContextListener implements ServletContextListener,
         String eventFilePath = context.getInitParameter("EventFilePath");
         context.setAttribute("EventFilePath", eventFilePath);
         /*-----------------------------End set EventFilePath-----------------------------*/
+
+         /* Sets the context in a static variable */
+        EventProcess.setServletContext(context);
+
+        
 
 
     }

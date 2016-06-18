@@ -1,22 +1,17 @@
 package com.model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
-enum Type{
-    康樂性, 服務性, 學藝性, 聯誼性, 學術性, 體育性, 志工群, 其他
-};
 
 public class Event {
 	private ArrayList<Applicant> applicantList;
 	private int id;
-    private String name;
     private Type type;
-    private int year;
-    private int month;
-    private int day;
-    private int hour;
-    private int minute;
+    private Calendar calendar;
+    private String name;
     private String location;
+    private String preview;
     private String introduction;
     private String ImgPath;
     private int CTR;
@@ -24,16 +19,28 @@ public class Event {
     public Event() {
         applicantList = new ArrayList<Applicant>();
 	    id = 0;
-	    name = "No name";
         type = Type.其他;
+        calendar = Calendar.getInstance();
+        name = "No name";
         location = "#";
+        preview = "No preview";
 	    introduction = "No introduction";
 	    ImgPath = "#";
-	    year = 0;
-        month = 0;
-        day = 0;
-	    hour = 0;
-	    minute = 0;
+        CTR = 0;
+    }
+
+    public Event(Type type, Calendar calendar, String name, String location, String preview, String introduction, String ImgPath){
+        this.applicantList = new ArrayList<Applicant>();
+        //this.id = EventProcess.getEventList().size();
+        this.id = 0;
+        this.type = type;
+        this.name = name;
+        this.calendar = calendar;
+        this.location = location;
+        this.preview = preview;
+        this.introduction = introduction;
+        this.ImgPath = ImgPath;
+        this.CTR = 0;
     }
 
     public ArrayList<Applicant> getApplicantList() {
@@ -52,6 +59,22 @@ public class Event {
         this.id = id;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public Calendar getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(Calendar calendar) {
+        this.calendar = calendar;
+    }
+
     public String getName() {
         return name;
     }
@@ -60,52 +83,20 @@ public class Event {
         this.name = name;
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public int getDay() {
-        return day;
-    }
-
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public int getMinute() {
-        return minute;
-    }
-
-    public void setMinute(int minute) {
-        this.minute = minute;
-    }
-
     public String getLocation() {
         return location;
     }
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getPreview() {
+        return preview;
+    }
+
+    public void setPreview(String preview) {
+        this.preview = preview;
     }
 
     public String getIntroduction() {
@@ -132,19 +123,11 @@ public class Event {
         this.CTR = CTR;
     }
 
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
     @Override
     public String toString() {
 	return "Event [id=" + id + ", name=" + name
-		+ ", year=" + year + ", month=" + month + ", day="
-		+ day + ", hour=" + hour + ", minute=" + minute +", location=" +location 
+		+ ", year=" + calendar.get(Calendar.YEAR) + ", month=" + calendar.get(Calendar.MONTH) + ", day="
+		+ calendar.get(Calendar.DATE) + ", hour=" + calendar.get(Calendar.HOUR_OF_DAY) + ", minute=" + calendar.get(Calendar.MINUTE) +", location=" +location
 		+ ", introduction=" + introduction +", imgPath=" + ImgPath + ", CTR=" + CTR + "]";
     }
 

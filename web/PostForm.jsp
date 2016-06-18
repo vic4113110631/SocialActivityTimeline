@@ -2,8 +2,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
-<%@ page import = "java.util.*" %>
+<%@ page import = "com.model.Type" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
+<%    pageContext.setAttribute("typeEnum", Type.values()); %>
 
 <html>
     <head>
@@ -35,15 +37,18 @@
 			<p><label>活動名稱<input name = "title" type = "text" ></label></p>
 			<p>
 				<label>種類
-					<select>
-
+					<select name = "type">
+						<c:forEach var = "type" items = "${typeEnum}">
+							<option value = "${type}">${type}</option>
+						</c:forEach>
 					</select>
 				</label>
 			</p>
 			<p><label>活動日期<input name = "date" type = "date" ></label></p>
 			<p><label>活動時間<input name = "time" type = "time" step = "600"></label></p>
 			<p><label>活動地點<input name = "location" type = "text" /></label></p>
-			<p><label>活動封面<input name = "content" type = "file" /></label></p>
+			<p><label>活動封面<input name = "cover" type = "file" /></label></p>
+			<p><label>活動簡介<input name = "preview" type = "text" placeholder="slogon about event" /></label></p>
 			<p><label>活動內容<textarea name = "content"></textarea></label></p>
 			<p><input type = "submit" value = "送出" /></p>
 		</form>
