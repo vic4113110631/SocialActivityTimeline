@@ -105,6 +105,7 @@ public class InsertEventServlet extends HttpServlet {
         Event event = new Event(this.type, this.calendar, this.title, this.location, this.preview, this.content, this.ImgPath);
         EventProcess eventProcess = new EventProcess();
         Boolean isWrite = eventProcess.writeEvent(event);
+        out.println("event successfully write to .josn file</br>");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -3,6 +3,7 @@ package com.web;
 
 import com.model.Event;
 import com.model.EventProcess;
+import org.json.simple.parser.ParseException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,7 +42,12 @@ public class IndexServlet extends HttpServlet {
 		}
 		*/
 		/*******make json file to timeline.js，and send to jsp via request**/
-		String TLJsonFile = ep.toJson(eList);
+		String TLJsonFile = null;
+		try {
+			TLJsonFile = ep.toJson(eList);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		request.setAttribute("TLJsonFile",TLJsonFile);
 				
 		RequestDispatcher view = request.getRequestDispatcher("index.jsp");

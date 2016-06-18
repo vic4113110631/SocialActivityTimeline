@@ -46,8 +46,19 @@ public class EventProcess{
         return eList;
     }
 
-    public String toJson(ArrayList<Event> eventList) {
-        return "test";
+    public String toJson(ArrayList<Event> eventList) throws ParseException {
+        JSONParser parser = new JSONParser();
+
+        JSONArray jsonArray = new JSONArray();
+        Gson gson = new GsonBuilder().disableHtmlEscaping().setPrettyPrinting().create();
+
+        for(int i = 0; i < eventList.size(); i++) {
+            String strJson = gson.toJson(eventList.get(i));
+            JSONObject jsonObject = (JSONObject) parser.parse(strJson);
+            jsonArray.add(jsonObject);
+        }
+        System.out.println(gson.toJson(jsonArray));
+        return gson.toJson(jsonArray);
     }
 
     public Boolean writeEvent(Event event) throws FileNotFoundException {

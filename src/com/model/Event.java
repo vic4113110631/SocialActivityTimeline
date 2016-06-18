@@ -31,8 +31,7 @@ public class Event {
 
     public Event(Type type, Calendar calendar, String name, String location, String preview, String introduction, String ImgPath){
         this.applicantList = new ArrayList<Applicant>();
-        //this.id = EventProcess.getEventList().size();
-        this.id = 0;
+        this.id = EventProcess.getEventList().size();
         this.type = type;
         this.name = name;
         this.calendar = calendar;
