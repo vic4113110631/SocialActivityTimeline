@@ -9,6 +9,13 @@ import java.io.InputStreamReader;
 import java.io.PushbackInputStream;
 import java.io.Reader;
 
+//reference: http://samsharehome.blogspot.tw/2009/01/utf-8-bominputstreamreader.html
+/*
+    http://langgufu.iteye.com/blog/2177659
+    http://www.rgagnon.com/javadetails/java-handle-utf8-file-with-bom.html
+    http://puremonkey2010.blogspot.tw/2010/10/java-javabomutf-8.html
+*/
+
 public class UnicodeReader extends Reader {
     private static final int BOM_SIZE = 4;
     private final InputStreamReader reader;

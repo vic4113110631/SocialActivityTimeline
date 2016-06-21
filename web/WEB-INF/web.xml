@@ -5,6 +5,7 @@
 		 version="3.0"
 		 metadata-complete="true">
 
+
 	<servlet>
 		<servlet-name>IndexServlet</servlet-name>
 		<servlet-class>com.web.IndexServlet</servlet-class>
@@ -23,6 +24,16 @@
 	<servlet-mapping>
 		<servlet-name>CertificateServlet</servlet-name>
 		<url-pattern>/Certificate.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>RelationServlet</servlet-name>
+		<servlet-class>com.web.RelationServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RelationServlet</servlet-name>
+		<url-pattern>/Relation.do</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -46,6 +57,16 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>com.web.ImageServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/ImageServlet.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>ApplicantServlet</servlet-name>
 		<servlet-class>com.web.ApplicantServlet</servlet-class>
 	</servlet>
@@ -57,7 +78,7 @@
 
 
 	<welcome-file-list>
-		<welcome-file>IndexServlet.do</welcome-file>
+		<welcome-file>Index.do</welcome-file>
 	</welcome-file-list>
 
 
@@ -73,7 +94,7 @@
 
 	<context-param>
 		<param-name>PasswordFile</param-name>
-		<param-value>Password.json</param-value>
+		<param-value>/WEB-INF/Event/Password.json</param-value>
 	</context-param>
 
 	<context-param>

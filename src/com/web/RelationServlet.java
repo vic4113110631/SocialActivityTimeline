@@ -1,7 +1,6 @@
 package com.web;
 
-import com.model.DataAnalysis;
-import com.model.Event;
+import com.model.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,18 +15,22 @@ public class RelationServlet extends HttpServlet {
 
 		RequestDispatcher view = null;
 		DataAnalysis da = new DataAnalysis();
-		String fn = (String)getServletContext().getAttribute("flare");	// get servlet context attribute for the flare.json file (add listener when start to set the attribute).
+		EventProcess ep = (EventProcess)getServletContext().getAttribute("event");
+
+		ApplicantProcess ap = (ApplicantProcess)getServletContext().getAttribute("apply");
 		String kwd = (String)request.getParameter("kwd");
 
 		if(kwd != null){
-			ArrayList<Event> myEvents = da.whatIParticipateIn(kwd);
-			if(myEvents != null){
-				Hashtable<String, ArrayList<Event>> table = da.relationDistanceTable(myEvents);
-				//da.Relation2JsonFile(da.RelationJsonPacker(kwd, table), fn);
-				request.setAttribute("RelationTable", table);
-				request.setAttribute("TableKeySet", table.keySet());
-				view = request.getRequestDispatcher("Relation.jsp");
+			ArrayList<Event> mainevents = ap.getYourEvents(ep, kwd);
+			for (Event e : mainevents){
+				System.out.println(e.getApplicantList());
 			}
+			Hashtable<Applicant, ArrayList<Event>> table = new Hashtable<Applicant, ArrayList<Event>>();
+			String jString = da.RelationAnalysis(ap, ep, kwd, mainevents, table);
+			ArrayList<RelationTableEntry> result = da.tableSplit(mainevents, table);
+			request.setAttribute("jsonStrg", jString);
+			request.setAttribute("relArray", result);
+			view = request.getRequestDispatcher("Relation.jsp");
 		}else view = request.getRequestDispatcher("index.jsp");
 
 		view.forward(request, response);

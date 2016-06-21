@@ -6,7 +6,7 @@ public class Account {
 	private String password;
     	
 	public Account() {
-		
+
 		id = password = null;
 	}
 	

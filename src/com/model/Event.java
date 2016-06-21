@@ -1,5 +1,6 @@
 package com.model;
 
+import javax.servlet.ServletContext;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -16,6 +17,17 @@ public class Event {
     private String ImgPath;
     private int CTR;
 
+    private static ServletContext context;
+
+    /* Called by Listener */
+    public static void setServletContext(ServletContext context){
+        Event.context = context;
+    }
+    /* Use this method to access context from any location */
+    public static ServletContext getServletContext(){
+        return Event.context;
+    }
+    /*
     public Event() {
         applicantList = new ArrayList<Applicant>();
 	    id = 0;
@@ -28,10 +40,22 @@ public class Event {
 	    ImgPath = "#";
         CTR = 0;
     }
+    */
+
+    @Override
+    public boolean equals(Object object){
+        Event event = (Event) object;
+        if(!this.getName().equals(event.getName())){
+            return Boolean.FALSE;
+        }else if(!this.getCalendar().equals( event.getCalendar())){
+            return Boolean.FALSE;
+        }
+        return Boolean.TRUE;
+    }
 
     public Event(Type type, Calendar calendar, String name, String location, String preview, String introduction, String ImgPath){
         this.applicantList = new ArrayList<Applicant>();
-        this.id = EventProcess.getEventList().size();
+        this.id = ( (ArrayList<Event>) context.getAttribute("EventList") ).size();
         this.type = type;
         this.name = name;
         this.calendar = calendar;
@@ -120,6 +144,10 @@ public class Event {
 
     public void setCTR(int CTR) {
         this.CTR = CTR;
+    }
+
+    public void addCTR(){
+
     }
 
     @Override

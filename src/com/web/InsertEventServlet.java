@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * Created by WeiRenChen on 2016/6/13.
@@ -34,7 +32,7 @@ public class InsertEventServlet extends HttpServlet {
     private String ImgPath;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8"); // 先指定輸出的編碼
-        PrintWriter out = response.getWriter(); // 再拿到輸出对象
+        PrintWriter out = response.getWriter(); // 再拿到輸出對象
         response.setContentType("text/html;charset=UTF-8");
 
         this.content = request.getParameter("content");
@@ -62,8 +60,9 @@ public class InsertEventServlet extends HttpServlet {
                     }else {
                         //do file up load specific process
                         String path = (String) getServletContext().getAttribute("ImgPath");
+                        System.out.println(path);
                         String realPath = getServletContext().getRealPath(path);
-
+                        System.out.println(realPath);
                         /*----------------測試輸出----------------*/
                         /*
                         System.out.println(realPath);
@@ -103,9 +102,24 @@ public class InsertEventServlet extends HttpServlet {
         }
 
         Event event = new Event(this.type, this.calendar, this.title, this.location, this.preview, this.content, this.ImgPath);
-        EventProcess eventProcess = new EventProcess();
-        Boolean isWrite = eventProcess.writeEvent(event);
-        out.println("event successfully write to .josn file</br>");
+
+        ArrayList<Event> eventList = (ArrayList<Event>) getServletContext().getAttribute("EvenList");
+        Boolean isEqual = Boolean.FALSE;
+        for(Event e : eventList){
+            System.out.println(e);
+            if(e.equals(event)){
+                isEqual = Boolean.TRUE;
+                break;
+            }
+        }
+        if(!isEqual) {
+            EventProcess eventProcess = new EventProcess();
+            Boolean isWrite = eventProcess.writeEvent(event);
+            eventList.add(event);
+            out.println("event successfully write to .josn file</br>");
+        }else{
+            out.println("some event has been in .josn file</br>");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -120,7 +134,7 @@ public class InsertEventServlet extends HttpServlet {
             }
 
             File savedFile = new File(file.getAbsolutePath() + File.separator + item.getName());
-            this.ImgPath = item.getName();
+            this.ImgPath = item.getName().replaceAll("\\s+","");
             FileOutputStream outputStream = new FileOutputStream(savedFile);
             InputStream inputStream = item.openStream();
             int x = 0;
@@ -138,7 +152,7 @@ public class InsertEventServlet extends HttpServlet {
         return false;
     }
 
-    private void selectValueByFieldName(String fieldName, String value){
+    private void selectValueByFieldName(String fieldName, String value) throws IOException {
         switch (fieldName){
             case "title":
                 this.title = value;
