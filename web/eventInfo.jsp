@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <head>
 	<!-- TEMPLATE -->
-	<title>Generic - Spatial by TEMPLATED</title>
+	<title>詳細資訊</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -30,7 +30,109 @@
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/pie.js"></script>
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-
+	
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script src="https://www.amcharts.com/lib/3/pie.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<script>
+        var chart = AmCharts.makeChart( "chartdiv", {
+        "type": "pie",
+        "theme": "light",
+        "dataProvider": [ {
+        "sex": "Male",
+        "value": ${sexRatio[0]}
+        }, {
+        "sex": "Female",
+        "value": ${sexRatio[1]}
+        }],
+        "valueField": "value",
+        "titleField": "sex",
+        "outlineAlpha": 0.4,
+        "depth3D": 15,
+        "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+        "angle": 30,
+        "export": {
+        "enabled": true
+        }
+        } );
+    </script>
+	<script>
+	var chart = AmCharts.makeChart("charts", {
+    "theme": "light",
+    "type": "serial",
+	"startDuration": 2,
+    "dataProvider": [{
+        "department": "資工",
+        "total": ${department['資工']},
+        "color": "#FF0F00"
+    }, {
+        "department": "應外",
+        "total": ${department['應外']},
+        "color": "#FF6600"
+    }, {
+        "department": "會計",
+        "total": ${department['會計']},
+        "color": "#FF9E01"
+    }, {
+        "department": "航管",
+	    "total": ${department['航管']},
+        "color": "#FCD202"
+    }, {
+        "department": "護理",
+        "total": ${department['護理']},
+        "color": "#F8FF01"
+    }],
+    "graphs": [{
+        "balloonText": "[[category]]: <b>[[value]]</b>",
+        "fillColorsField": "color",
+        "fillAlphas": 1,
+        "lineAlpha": 0.1,
+        "type": "column",
+        "valueField": "total"
+    }],
+    "depth3D": 20,
+	"angle": 30,
+    "chartCursor": {
+        "categoryBalloonEnabled": false,
+        "cursorAlpha": 0,
+        "zoomable": false
+    },    
+    "categoryField": "department",
+    "categoryAxis": {
+        "gridPosition": "start",
+        "labelRotation": 0
+    },
+    "export": {
+    	"enabled": true
+     }
+    });
+	</script>
+    <style>
+        #chartdiv {
+			float: right;
+            width		: 60%;
+            height		: 435px;
+            font-size	: 32px;
+        }
+    </style>
+	<style>
+	    #charts {
+			float: left;
+	        width		: 40%;
+	        height		: 435px;
+	        font-size	: 32px;
+	}
+	 </style>
+	
+	
+	
+	
+	
+	
+	
     <script>
         var chart = AmCharts.makeChart( "chartdiv", {
         "type": "pie",
@@ -53,20 +155,14 @@
         }
         } );
     </script>
-    <style>
-        #chartdiv {
-            width		: 100%;
-            height		: 435px;
-            font-size	: 11px;
-        }
-    </style>
+    
 </head>
 <body style="font-family: 微軟正黑體; font-size:22px">
 
 <!-- Header -->
 <%
     Event e = (Event) request.getAttribute("event");
-    out.print("<div style='background:lightgray'><center><img src = ImageServlet.do?ImageName=" + e.getImgPath() + "></img></center></div>");
+    out.print("<div><center><img src = ImageServlet.do?ImageName=" + e.getImgPath() + "></img></center></div>");
     out.println(e.getIntroduction());
     
 %>
@@ -88,7 +184,12 @@
     out.print("<center>目前報名人數:" + total);
 %>
 </center><br><br>
-<div id="chartdiv" ></div><br><br>
+<br><br><br><br><br>
+<div id="charts"></div>
+<div id="chartdiv" >
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <form action = "ApplicantForm.jsp">
         <input type="hidden" name="name" value="${event.getName()}">
 <center><input type="submit" value="報名"></center><br><br><br><br><br>

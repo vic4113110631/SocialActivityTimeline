@@ -14,20 +14,22 @@ public class RelationServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		RequestDispatcher view = null;
-		DataAnalysis da = new DataAnalysis();
-		EventProcess ep = (EventProcess)getServletContext().getAttribute("event");
+		DataAnalysis dataAnalysis = new DataAnalysis();
+		EventProcess eventProcess = (EventProcess)getServletContext().getAttribute("event");
 
-		ApplicantProcess ap = (ApplicantProcess)getServletContext().getAttribute("apply");
+
+		ApplicantProcess applicantProcess = (ApplicantProcess)getServletContext().getAttribute("apply");
 		String kwd = (String)request.getParameter("kwd");
 
 		if(kwd != null){
-			ArrayList<Event> mainevents = ap.getYourEvents(ep, kwd);
+			ArrayList<Event> mainevents = applicantProcess.getYourEvents(eventProcess, kwd);
 			for (Event e : mainevents){
 				System.out.println(e.getApplicantList());
+				System.out.println("--------------------------------------------------------------------------------------");
 			}
-			Hashtable<Applicant, ArrayList<Event>> table = new Hashtable<Applicant, ArrayList<Event>>();
-			String jString = da.RelationAnalysis(ap, ep, kwd, mainevents, table);
-			ArrayList<RelationTableEntry> result = da.tableSplit(mainevents, table);
+			Hashtable<Applicant, ArrayList<Event>> table = new Hashtable<>();
+			String jString = dataAnalysis.RelationAnalysis(applicantProcess, eventProcess, kwd, mainevents, table);
+			ArrayList<RelationTableEntry> result = dataAnalysis.tableSplit(mainevents, table);
 			request.setAttribute("jsonStrg", jString);
 			request.setAttribute("relArray", result);
 			view = request.getRequestDispatcher("Relation.jsp");

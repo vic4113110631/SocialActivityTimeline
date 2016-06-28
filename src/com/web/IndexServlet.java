@@ -47,7 +47,7 @@ public class IndexServlet extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		//System.out.println(TLJsonFile);
+		System.out.println(TLJsonFile);
 		request.setAttribute("TLJsonFile", TLJsonFile);
 
 		RequestDispatcher view = request.getRequestDispatcher("index.jsp");

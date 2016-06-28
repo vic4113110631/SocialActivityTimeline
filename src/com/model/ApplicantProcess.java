@@ -109,13 +109,10 @@ public class ApplicantProcess{
 	}
     */
 
-	public ArrayList<Event> getYourEvents(EventProcess ep,String id){
+	public ArrayList<Event> getYourEvents(EventProcess ep, String id){
 		ArrayList<Event> activity = new ArrayList<Event>();
 		ArrayList<Event> allEvents = (ArrayList<Event>) getServletContext().getAttribute("EventList");
 
-		if(allEvents.isEmpty()){
-			System.out.println("GG");
-		}
 		for(Event event : allEvents){
 			for(Applicant a: event.getApplicantList()){
 				if((id.equals(a.getNumber()))==true){

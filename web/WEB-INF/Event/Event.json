@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "calendar": {
       "month": 4,
@@ -13,16 +13,34 @@
     "CTR": 853,
     "applicantList": [
       {
-        "number": "00257148",
-        "grade": "資工",
-        "sex": "MALE",
-        "name": "陳威任"
+        "number": "00257104",
+        "grade": "會計",
+        "sex": "FEMALE",
+        "name": "島崎遙香"
       },
       {
         "number": "00257147",
-        "grade": "護理",
+        "grade": "應外",
         "sex": "FEMALE",
         "name": "陳以恩"
+      },
+      {
+        "number": "00257002",
+        "grade": "資工",
+        "sex": "MALE",
+        "name": "吳宇晨"
+      },
+      {
+        "number": "00257100",
+        "grade": "會計",
+        "sex": "MALE",
+        "name": "馬尙彬"
+      },
+      {
+        "number": "00257146",
+        "grade": "護理",
+        "sex": "MALE",
+        "name": "徐志榮"
       }
     ],
     "name": "海大熱舞期末成果發表－我們",
@@ -49,6 +67,30 @@
         "grade": "資工",
         "sex": "MALE",
         "name": "陳威任"
+      },
+	  {
+        "number": "00257111",
+        "grade": "資工",
+        "sex": "MALE",
+        "name": "施博文"
+      },
+      {
+        "number": "00257878",
+        "grade": "航管",
+        "sex": "MALE",
+        "name": "林肛北"
+      },
+      {
+        "number": "00257101",
+        "grade": "應外",
+        "sex": "FEMALE",
+        "name": "柏木由紀"
+      },
+      {
+        "number": "00257102",
+        "grade": "航管",
+        "sex": "FEMALE",
+        "name": "大島優子"
       }
     ],
     "name": "2016 Join The World 青年領袖民主營",
@@ -71,16 +113,34 @@
     "CTR": 124,
     "applicantList": [
       {
-        "number": "00257148",
+       "number": "00257111",
         "grade": "資工",
         "sex": "MALE",
-        "name": "陳威任"
+        "name": "施博文"
       },
       {
         "number": "00257147",
         "grade": "護理",
         "sex": "FEMALE",
         "name": "陳以恩"
+      },
+      {
+        "number": "00257103",
+        "grade": "護理",
+        "sex": "FEMALE",
+        "name": "指原莉乃"
+      },
+      {
+         "number": "00257878",
+        "grade": "航管",
+        "sex": "MALE",
+        "name": "林肛北"
+      },
+      {
+        "number": "00257104",
+        "grade": "會計",
+        "sex": "FEMALE",
+        "name": "島崎遙香"
       }
     ],
     "name": "薈萃坊企業參訪阿默蛋糕工廠",
@@ -113,6 +173,24 @@
         "grade": "護理",
         "sex": "FEMALE",
         "name": "陳以恩"
+      },
+      {
+        "number": "00257107",
+        "grade": "航管",
+        "sex": "FEMALE",
+        "name": "橫山由依"
+      },
+      {
+        "number": "00257142",
+        "grade": "護理",
+        "sex": "MALE",
+        "name": "徐志榮"
+      },
+      {
+        "number": "00257102",
+        "grade": "航管",
+        "sex": "FEMALE",
+        "name": "大島優子"
       }
     ],
     "name": "★★★2016鷗海YO演唱會~~",
@@ -135,16 +213,34 @@
     "CTR": 86,
     "applicantList": [
       {
-        "number": "00257148",
-        "grade": "資工",
-        "sex": "MALE",
-        "name": "陳威任"
+        "number": "00257108",
+        "grade": "應外",
+        "sex": "FEMALE",
+        "name": "板野友美"
       },
       {
-        "number": "00257147",
+        "number": "00257100",
+        "grade": "會計",
+        "sex": "MALE",
+        "name": "馬尚彬"
+      },
+      {
+        "number": "00257002",
+        "grade": "資工",
+        "sex": "MALE",
+        "name": "吳宇晨"
+      },
+      {
+        "number": "00257105",
+        "grade": "資工",
+        "sex": "FEMALE",
+        "name": "渡邊麻友"
+      },
+      {
+        "number": "00257106",
         "grade": "護理",
         "sex": "FEMALE",
-        "name": "陳以恩"
+        "name": "前田敦子"
       }
     ],
     "name": "物聯網實物教學平台演講",
@@ -167,16 +263,34 @@
     "CTR": 241,
     "applicantList": [
       {
-        "number": "00257148",
+        "number": "00257002",
         "grade": "資工",
         "sex": "MALE",
-        "name": "陳威任"
+        "name": "吳宇晨"
       },
       {
-        "number": "00257147",
-        "grade": "護理",
+        "number": "00257111",
+        "grade": "會計",
+        "sex": "MALE",
+        "name": "施博文"
+      },
+      {
+        "number": "00257102",
+        "grade": "航管",
         "sex": "FEMALE",
-        "name": "陳以恩"
+        "name": "大島優子"
+      },
+      {
+        "number": "00257104",
+        "grade": "會計",
+        "sex": "FEMALE",
+        "name": "島崎遙香"
+      },
+      {
+        "number": "00257107",
+        "grade": "航管",
+        "sex": "FEMALE",
+        "name": "橫山由依"
       }
     ],
     "name": "『翻譯工讀生及義工』招募活動",
@@ -205,10 +319,28 @@
         "name": "陳威任"
       },
       {
-        "number": "00257147",
+        "number": "00257111",
+        "grade": "會計",
+        "sex": "MALE",
+        "name": "施博文"
+      },
+      {
+        "number": "00257108",
+        "grade": "應外",
+        "sex": "FEMALE",
+        "name": "板野由美"
+      },
+      {
+        "number": "00257106",
         "grade": "護理",
         "sex": "FEMALE",
-        "name": "陳以恩"
+        "name": "前田敦子"
+      },
+      {
+        "number": "00257101",
+        "grade": "應外",
+        "sex": "FEMALE",
+        "name": "柏木由紀"
       }
     ],
     "name": "相聲瓦舍《賣橘子的》",
@@ -231,16 +363,32 @@
     "CTR": 132,
     "applicantList": [
       {
-        "number": "00257148",
-        "grade": "資工",
-        "sex": "MALE",
-        "name": "陳威任"
+        "number": "00257101",
+        "grade": "應外",
+        "sex": "FEMALE",
+        "name": "柏木由紀"
       },
       {
-        "number": "00257147",
+        "number": "00257105",
+        "grade": "資工",
+        "sex": "FEMALE",
+        "name": "渡邊麻友"
+      },{
+        "number": "00257002",
+        "grade": "資工",
+        "sex": "MALE",
+        "name": "吳宇晨"
+      },
+      {
+        "number": "00257111",
+        "grade": "會計",
+        "sex": "MALE",
+        "name": "施博文"
+      },{
+        "number": "00257103",
         "grade": "護理",
         "sex": "FEMALE",
-        "name": "陳以恩"
+        "name": "指原莉乃"
       }
     ],
     "name": "孤女的願望-柳依蘭傳奇",
@@ -263,16 +411,34 @@
     "CTR": 612,
     "applicantList": [
       {
-        "number": "00257148",
-        "grade": "資工",
+        "number": "00257146",
+        "grade": "護理",
         "sex": "MALE",
-        "name": "陳威任"
+        "name": "徐志榮"
       },
       {
         "number": "00257147",
         "grade": "護理",
         "sex": "FEMALE",
         "name": "陳以恩"
+      },
+      {
+        "number": "00257878",
+        "grade": "航管",
+        "sex": "MALE",
+        "name": "林肛北"
+      },
+      {
+        "number": "00257108",
+        "grade": "應外",
+        "sex": "FEMALE",
+        "name": "板野由美"
+      },
+      {
+        "number": "00257101",
+        "grade": "應外",
+        "sex": "FEMALE",
+        "name": "柏木由紀"
       }
     ],
     "name": "2016螢火蟲季",
@@ -292,19 +458,37 @@
     },
     "preview": "王傑是巴塞隆納大學美術博士，畫家、作家、插畫家，現為文化大學推廣部旅遊速寫課程講師，並於個人畫室開設各類繪畫課程。",
     "ImgPath": "9.jpg",
-    "CTR": 517,
+    "CTR": 519,
     "applicantList": [
       {
-        "number": "00257148",
-        "grade": "資工",
+        "number": "00257100",
+        "grade": "會計",
         "sex": "MALE",
-        "name": "陳威任"
+        "name": "馬尚彬"
       },
       {
-        "number": "00257147",
-        "grade": "護理",
+        "number": "00257002",
+        "grade": "資工",
+        "sex": "MALE",
+        "name": "吳宇晨"
+      },
+      {
+        "number": "00257107",
+        "grade": "航管",
         "sex": "FEMALE",
-        "name": "陳以恩"
+        "name": "橫山由依"
+      },
+      {
+        "number": "00257102",
+        "grade": "航管",
+        "sex": "FEMALE",
+        "name": "大島優子"
+      },
+      {
+        "number": "00257104",
+        "grade": "會計",
+        "sex": "FEMALE",
+        "name": "島崎遙香"
       }
     ],
     "name": "台北聯合大學系統聯合推廣活動-王傑四校巡迴展",
@@ -327,16 +511,31 @@
     "CTR": 600,
     "applicantList": [
       {
-        "number": "00257148",
-        "grade": "資工",
+        "number": "00257878",
+        "grade": "航管",
         "sex": "MALE",
-        "name": "陳威任"
+        "name": "林肛北"
       },
       {
-        "number": "00257147",
+        "number": "00257103",
         "grade": "護理",
         "sex": "FEMALE",
-        "name": "陳以恩"
+        "name": "指原莉乃"
+      },{
+        "number": "00257146",
+        "grade": "護理",
+        "sex": "MALE",
+        "name": "徐志榮"
+      },{
+        "number": "00257100",
+        "grade": "會計",
+        "sex": "MALE",
+        "name": "馬尚彬"
+      },{
+        "number": "00257878",
+        "grade": "航管",
+        "sex": "FEMALE",
+        "name": "板野由美"
       }
     ],
     "name": "2016通訊之夜-屍訊我",
@@ -365,16 +564,28 @@
         "name": "陳威任"
       },
       {
-        "number": "00257147",
+        "number": "00257106",
         "grade": "護理",
         "sex": "FEMALE",
-        "name": "陳以恩"
+        "name": "前田敦子"
       },
       {
-        "number": "00257111",
-        "grade": "3",
+        "number": "00257100",
+        "grade": "會計",
         "sex": "MALE",
-        "name": "施博文"
+        "name": "馬尚彬"
+      },
+      {
+        "number": "00257105",
+        "grade": "資工",
+        "sex": "FEMALE",
+        "name": "渡邊麻友"
+      },
+      {
+        "number": "00257107",
+        "grade": "航管",
+        "sex": "FEMALE",
+        "name": "橫山由依"
       }
     ],
     "name": "2016資工之夜-決戰楓資谷",
@@ -397,16 +608,34 @@
     "CTR": 29,
     "applicantList": [
       {
-        "number": "00257148",
+        "number": "00257002",
         "grade": "資工",
         "sex": "MALE",
-        "name": "陳威任"
+        "name": "吳宇晨"
       },
       {
         "number": "00257147",
         "grade": "護理",
         "sex": "FEMALE",
         "name": "陳以恩"
+      },
+      {
+        "number": "00257111",
+        "grade": "會計",
+        "sex": "MALE",
+        "name": "施博文"
+      },
+      {
+        "number": "00257146",
+        "grade": "護理",
+        "sex": "MALE",
+        "name": "徐志榮"
+      },
+      {
+        "number": "00257878",
+        "grade": "航管",
+        "sex": "MALE",
+        "name": "林肛北"
       }
     ],
     "name": "精誠資訊有限公司實習說明會",

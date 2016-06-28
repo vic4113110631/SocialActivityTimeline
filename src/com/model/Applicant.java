@@ -12,18 +12,33 @@ public class Applicant {
 
     @Override
     public boolean equals(Object object){
+        if (object == null) return false;
+        if (object == this) return true;
+        if (!(object instanceof Applicant))return false;
         Applicant applicant = (Applicant) object;
+        if(applicantCompare(applicant)) return true;
+        else return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return 0;
+    }
+
+    public boolean applicantCompare(Applicant applicant){
+        boolean result = true;
+
         if(!this.getName().equals(applicant.getName())){
-            return Boolean.FALSE;
-        }else if(!this.getNumber().equals(applicant.getNumber())){
-            return Boolean.FALSE;
-        }else if(!this.getSex().equals(applicant.getSex())){
-            return Boolean.FALSE;
+            result = false;
         }else if(!this.getGrade().equals(applicant.getGrade())){
-            return Boolean.FALSE;
+            result = false;
+        }else if(!this.getNumber().equals(applicant.getNumber())){
+            result = false;
+        }else if(!this.getSex().equals(applicant.getSex())){
+            result = false;
         }
 
-        return Boolean.TRUE;
+        return result;
     }
 
     public Applicant(String name, String grade, String number, Sex sex){

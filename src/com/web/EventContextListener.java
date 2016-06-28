@@ -105,6 +105,7 @@ public class EventContextListener implements ServletContextListener,
 
             ApplicantProcess applicantProcess = new ApplicantProcess();
             applicantProcess.setServletContext(context);
+            Event.setServletContext(context);
             context.setAttribute("apply", applicantProcess);
             context.setAttribute("EventList", eventList);
             context.setAttribute("event", eventProcess);
@@ -149,7 +150,16 @@ public class EventContextListener implements ServletContextListener,
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        ;
+
+        Applicant a = new Applicant("Chen", "3", "00257148", Sex.FEMALE);
+        Applicant b = new Applicant("Chen", "3", "00257148", Sex.FEMALE);
+        Applicant c = new Applicant("Chen", "2", "00257148", Sex.FEMALE);
+        if(a.equals(b)){
+            System.out.println("a == b");
+        }
+        if(!a.equals(c)){
+            System.out.println("a != c");
+        }
     }
     public void contextDestroyed(ServletContextEvent sce) {
       /* This method is invoked when the Servlet Context

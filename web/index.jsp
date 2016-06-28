@@ -1,6 +1,4 @@
 <%@page contentType="text/html" pageEncoding="utf-8"%>
-<%@ page import="java.util.*" %>
-<%@ page import="com.model.*" %>
 
 <!DOCTYPE html>
 <html>
@@ -31,7 +29,7 @@
 	<body class="landing" style="font-family: 微軟正黑體;">
 	<!-- Header -->
 			<header id="header" class="alt">
-				<h1><strong><a href="#">Produced</a></strong> by team 7 </h1>
+				<h1><strong><a href="第七組.pptx">Produced</a></strong> by team 7 </h1>
 				<nav id="nav">
 					<ul>
 					
@@ -84,7 +82,7 @@
 	
 	<section>
 		
-		<form method="get" action="/Index.do" style = "background-color: lightgray; padding: 50px; padding-bottom: 65px;" >
+		<form method="get" action="Index.do" style = "background-color: lightgray; padding: 50px; padding-bottom: 65px;" >
 			<br><div class="row uniform 100%">
 				
 				<div class="12u$ 12u$(xlarge)" align="center">

@@ -101,10 +101,14 @@ public class InsertEventServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        System.out.println("---------------------------------InsertEvent-------------------------------------------");
         Event event = new Event(this.type, this.calendar, this.title, this.location, this.preview, this.content, this.ImgPath);
+        System.out.println(event);
 
-        ArrayList<Event> eventList = (ArrayList<Event>) getServletContext().getAttribute("EvenList");
+        ArrayList<Event> eventList = (ArrayList<Event>) getServletContext().getAttribute("EventList");
+
         Boolean isEqual = Boolean.FALSE;
+
         for(Event e : eventList){
             System.out.println(e);
             if(e.equals(event)){
@@ -112,6 +116,8 @@ public class InsertEventServlet extends HttpServlet {
                 break;
             }
         }
+        System.out.println(isEqual);
+        System.out.println(event);
         if(!isEqual) {
             EventProcess eventProcess = new EventProcess();
             Boolean isWrite = eventProcess.writeEvent(event);
@@ -120,6 +126,8 @@ public class InsertEventServlet extends HttpServlet {
         }else{
             out.println("some event has been in .josn file</br>");
         }
+        out.println("5 秒後轉跳頁面</br>");
+        response.addHeader("refresh", "5;URL=Index.do");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
