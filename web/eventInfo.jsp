@@ -43,10 +43,10 @@
         "theme": "light",
         "dataProvider": [ {
         "sex": "Male",
-        "value": ${sexRatio[0]}
+        "value": ${requestScope.get("sexRatio")[0]}
         }, {
         "sex": "Female",
-        "value": ${sexRatio[1]}
+        "value": ${requestScope.get("sexRatio")[1]}
         }],
         "valueField": "value",
         "titleField": "sex",
